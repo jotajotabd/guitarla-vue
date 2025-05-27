@@ -1,10 +1,13 @@
 <script setup>
+
 defineProps({
     carrito: {
         type: Array,
         required: true
     }
 });
+
+defineEmits(['sumar-cantidad', 'restar-cantidad']);
 
 </script>
 
@@ -51,6 +54,7 @@ defineProps({
                                             <button
                                                 type="button"
                                                 class="btn btn-dark"
+                                                @click="$emit('restar-cantidad',c.id)"
                                             >
                                                 -
                                             </button>
@@ -58,6 +62,7 @@ defineProps({
                                             <button
                                                 type="button"
                                                 class="btn btn-dark"
+                                                @click="$emit('sumar-cantidad', c.id)"
                                             >
                                                 +
                                             </button>

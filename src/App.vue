@@ -14,7 +14,7 @@ onMounted(() => {
 
 const agregarCarrito = (guitarra) => {
     const existe = carrito.value.findIndex(producto => producto.id === guitarra.id);
-    console.log(existe);
+
     if (existe !== -1) {
         carrito.value[existe].cantidad++;
         return;
@@ -24,11 +24,25 @@ const agregarCarrito = (guitarra) => {
     };
 }
 
+const sumarCantidad = (id) => {
+    const index = carrito.value.findIndex(producto => producto.id === id);
+    if (carrito.value[index].cantidad >= 5) return;
+    carrito.value[index].cantidad++;
+}
+
+const restarCantidad = (id) => {
+    const index = carrito.value.findIndex(producto => producto.id === id);
+    if (carrito.value[index].cantidad <= 1) return;
+    carrito.value[index].cantidad--;
+}
+
 </script>
 
 <template>
     <Header
     :carrito="carrito"
+    @sumar-cantidad="sumarCantidad"
+    @restar-cantidad="restarCantidad"
     />
 
     <main class="container-xl mt-5">

@@ -21,7 +21,6 @@ defineEmits(['agregar-carrito']);
         <div class="col-8">
             <h3 class="text-black fs-4 fw-bold text-uppercase"> {{ guitarra.nombre}} </h3>
             <p>{{ guitarra.descripcion }}</p>
-            <h1>{{ numero }}</h1>
             <p class="fw-black text-primary fs-3">${{ guitarra.precio }}</p>
             <button
                 type="button"
