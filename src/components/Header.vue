@@ -1,13 +1,23 @@
 <script setup>
 
-defineProps({
+import { computed } from 'vue';
+
+const props = defineProps({
     carrito: {
         type: Array,
+        required: true
+    },
+    guitarra: {
+        type: Object,
         required: true
     }
 });
 
-defineEmits(['sumar-cantidad', 'restar-cantidad']);
+defineEmits(['sumar-cantidad', 'restar-cantidad', 'agregar-carrito']);
+
+const totalAPagar = computed(() => {
+    return props.carrito.reduce((total, item) =>  total + (item.cantidad * item.precio), 0)
+})
 
 </script>
 
@@ -79,7 +89,7 @@ defineEmits(['sumar-cantidad', 'restar-cantidad']);
                                 </tbody>
                             </table>
 
-                            <p class="text-end">Total pagar: <span class="fw-bold">$899</span></p>
+                            <p class="text-end">Total pagar: <span class="fw-bold">${{ totalAPagar }}</span></p>
                             <button class="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
                             </div>
                         </div>
@@ -89,12 +99,13 @@ defineEmits(['sumar-cantidad', 'restar-cantidad']);
 
             <div class="row mt-5">
                 <div class="col-md-6 text-center text-md-start pt-5">
-                    <h1 class="display-2 fw-bold">Modelo VAI</h1>
-                    <p class="mt-5 fs-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, possimus quibusdam dolor nemo velit quo, fuga omnis, iure molestias optio tempore sint at ipsa dolorum odio exercitationem eos inventore odit.</p>
-                    <p class="text-primary fs-1 fw-black">$399</p>
-                    <button 
+                    <h1 class="display-2 fw-bold">Modelo {{ guitarra.nombre }}</h1>
+                    <p class="mt-5 fs-5 text-white">{{  guitarra.descripcion }}</p>
+                    <p class="text-primary fs-1 fw-black">${{ guitarra.precio  }}</p>
+                    <button
                         type="button"
                         class="btn fs-4 bg-primary text-white py-2 px-5"
+                        @click="$emit('agregar-carrito', guitarra)"
                     >Agregar al Carrito</button>
                 </div>
             </div>
