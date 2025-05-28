@@ -38,6 +38,15 @@ const restarCantidad = (id) => {
     carrito.value[index].cantidad--;
 }
 
+const eliminarProducto = (id) => {
+    // Primera forma de eliminar un producto del carrito
+    // const index = carrito.value.findIndex(producto => producto.id === id);
+    // carrito.value.splice(index, 1);
+
+    // Otra forma de eliminar un producto del carrito
+    carrito.value = carrito.value.filter(producto => producto.id !== id);
+}
+
 </script>
 
 <template>
@@ -47,6 +56,7 @@ const restarCantidad = (id) => {
     @agregar-carrito="agregarCarrito"
     @sumar-cantidad="sumarCantidad"
     @restar-cantidad="restarCantidad"
+    @eliminar-producto="eliminarProducto"
     />
 
     <main class="container-xl mt-5">

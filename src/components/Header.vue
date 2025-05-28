@@ -13,7 +13,7 @@ const props = defineProps({
     }
 });
 
-defineEmits(['sumar-cantidad', 'restar-cantidad', 'agregar-carrito']);
+defineEmits(['sumar-cantidad', 'restar-cantidad', 'agregar-carrito', 'eliminar-producto']);
 
 const totalAPagar = computed(() => {
     return props.carrito.reduce((total, item) =>  total + (item.cantidad * item.precio), 0)
@@ -81,6 +81,7 @@ const totalAPagar = computed(() => {
                                             <button
                                                 class="btn btn-danger"
                                                 type="button"
+                                                @click="$emit('eliminar-producto', c.id)"
                                             >
                                                 X
                                             </button>
