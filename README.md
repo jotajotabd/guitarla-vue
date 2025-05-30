@@ -1,5 +1,23 @@
-# Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Tienda de Guitarras Los Angeles
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+#### Una pequeña página SPA de ventas de guitarras hecha en Vue3 donde aprendimos el uso de:
+1) Componentes
+2) Props
+3) Emits
+4) Custom Events
+5) State
+6) Watch
+7) Eventos
+8) Computed
+9) Directivas
+
+- Dónde podemos agregar productos al carrito, sumar o restar cantidades y ver la totalidad a pagar.
+- Te dejo el link para que la prubes: https://guitarla-vue3-curso.netlify.app/
+
+
+## Authors
+
+- [@codigoconjuan](https://www.instagram.com/codigoconjuan/)
+- Perfil en Udemy https://www.udemy.com/user/juanpablodelatorrevaldez/
+
