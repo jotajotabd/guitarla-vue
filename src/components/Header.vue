@@ -34,7 +34,10 @@ const totalAPagar = computed(() => {
                     <div
                         class="carrito"
                     >
-                        <img class="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
+                    <span v-if="carrito.length" class="alerta-carrito" type="button">{{ carrito.length }}</span>
+                    <img class="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
+                        <div>
+                        </div>
 
                         <div id="carrito" class="bg-white p-3">
                             <p v-if="carrito.length === 0" class="text-center m-0">

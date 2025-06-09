@@ -20,6 +20,10 @@
   position: absolute;
 }
 
+#carrito {
+
+}
+
 .carrito:hover #carrito {
   display: block;
   background-color: white;
@@ -48,6 +52,19 @@
   padding: 0 2px;
   margin: 0 3px;
 }
+
+.alerta-carrito{
+  background-color: red;
+  color: white;
+  font-size:small;
+  padding: 3px 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  right: -8px;
+  font-weight: bold;
+}
+
 .m-0 {
   margin: 0;
 }
